@@ -1,8 +1,12 @@
 # 工作流程名稱，會顯示在 GitHub 的 Actions 頁面上
 name: pytest
 
-# 設定觸發條件為「手動觸發」
-on: [push, workflow_dispatch]
+# 設定觸發條件
+on: 
+    push: 
+      branches:
+        - main
+    workflow_dispatch:
 
 jobs:
   pytest:  # 定義一個工作（job），名稱為 pytest
