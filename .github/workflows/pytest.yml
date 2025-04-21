@@ -9,8 +9,6 @@ on:
     workflow_dispatch:
     pull_request:
         types: [opened]
-    schedule:
-        - cron: '* * * * *'
 
 jobs:
   pytest:  # 定義一個工作（job），名稱為 pytest
