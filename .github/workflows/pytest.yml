@@ -6,11 +6,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: clone repository
-            run: |
+              run: |
                  git clone https://github.com/shutsenliu/github-action-python
                  cd github-action-python
             - name: install pytest
-            run: pip install pytest
+              run: pip install pytest
             - name: run pytest
-            run: pytest
+              run: pytest
 
