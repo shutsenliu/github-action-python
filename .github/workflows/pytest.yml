@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest  # 在 GitHub 提供的 Ubuntu 虛擬機器上執行
 
     steps:  # 以下是這個 job 執行的步驟列表
+      - name: print github action context
+        run: echo ${{ github.repositoryUrl }}
 
       # 檢查工作目錄狀態（checkout 之前）
       - name: pre checkout
