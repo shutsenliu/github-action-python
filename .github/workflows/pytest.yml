@@ -10,7 +10,7 @@ on:
     pull_request:
         types: [opened]
     schedule:
-        - cron: '*/5 * * * *'
+        - cron: '* * * * *'
 
 jobs:
   pytest:  # 定義一個工作（job），名稱為 pytest
