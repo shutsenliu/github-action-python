@@ -1,14 +1,23 @@
+# 工作流程名稱，會顯示在 GitHub Actions 頁面上
 name: pytest
+
+# 設定觸發方式為手動（workflow_dispatch）
 on: workflow_dispatch
 
 jobs:
-    pytest:
-        runs-on: ubuntu-latest
-        steps:
-            - name: checkout code
-              uses: actions/checkout@v4
-            - name: install pytest
-              run: pip install pytest
-            - name: run pytest
-              run: pytest
+  pytest:  # 工作（job）名稱，可以自訂
+    runs-on: ubuntu-latest  # 使用 GitHub 提供的 Ubuntu 虛擬機器執行
 
+    steps:  # 步驟清單，每個步驟會依序執行
+
+      # 第一步：檢出目前的原始碼（把 repo 內容下載到 runner）
+      - name: checkout code
+        uses: actions/checkout@v4  # 使用官方 checkout action 的第 4 版
+
+      # 第二步：安裝 pytest 測試框架
+      - name: install pytest
+        run: pip install pytest  # 使用 pip 安裝 pytest
+
+      # 第三步：執行 pytest 測試
+      - name: run pytest
+        run: pytest  # 會自動尋找所有 test_*.py 或 *_test.py 來執行
